@@ -566,6 +566,7 @@ function totalFeitos(){ return Object.keys(S.feitos||{}).length; }
    NAVEGAÇÃO
    ========================================================= */
 function $(id){ return document.getElementById(id); }
+function setTxt(id, val){ var e=$(id); if(e) e.textContent=val; }
 function show(id){
   var s=document.querySelectorAll('.screen');
   for(var i=0;i<s.length;i++) s[i].classList.remove('active');
@@ -595,7 +596,6 @@ var MODS = [
 
 function renderHome(){
   $('lvlBadge').textContent = nivelLabel(S.nivel);
-  $('statLvl').textContent = nivelLabel(S.nivel);
   $('statDone').textContent = totalFeitos();
 
   var ns=$('niveis').children;
